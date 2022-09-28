@@ -6,4 +6,5 @@ export const selectAllCampsites = () => {
 
 export const selectRandomCampsite = () => {
     return CAMPSITES[Math.floor(Math.floor(CAMPSITES.length * Math.random()))];
-}
+};
+

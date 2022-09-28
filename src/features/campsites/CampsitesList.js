@@ -7,17 +7,15 @@ const CampsitesList = () => {
     return (
         // Added a container here because otherwise I was getting a horizontal
         // scrollbar...?
-        <Container>
-            <Row className='ms-auto'>
-                {campsites.map((campsite) => {
-                    return (
-                        <Col md='5' className='m-4' key={campsite.id}>
-                            <CampsiteCard campsite={campsite} />
-                        </Col>
-                    );
-                })}
-            </Row>
-        </Container>
+        <Row className='ms-auto'>
+            {campsites.map((campsite) => {
+                return (
+                    <Col md='5' className='m-4' key={campsite.id}>
+                        <CampsiteCard campsite={campsite} />
+                    </Col>
+                );
+            })}
+        </Row>
     )
 };
 
