@@ -2,8 +2,9 @@ import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import CampsitesDirectoryPage from "./pages/CampsitesDirectoryPage";
 import './App.css';
-import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CampsiteDetailPage from "./pages/CampsiteDetailPage";
@@ -21,6 +22,7 @@ function App() {
                     path='directory/:campsiteId'
                     element={<CampsiteDetailPage/>}
                 />
+                <Route path='about' element={<AboutPage/>}/>
             </Routes>
             <Footer/>
         </div>
