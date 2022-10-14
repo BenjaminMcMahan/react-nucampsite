@@ -1,3 +1,4 @@
+import {useSelector} from "react-redux";
 import {Container, Row} from "reactstrap";
 import {useParams} from "react-router-dom";
 import {selectCampsiteById} from "../features/campsites/campsitesSlice";
@@ -9,7 +10,8 @@ const CampsiteDetailPage = () => {
     // Get the ID passed from the router in App.js
     const {campsiteId} = useParams();
     // Get the corresponding campsite using the ID
-    const campsite = selectCampsiteById(campsiteId);
+    const campsite = useSelector(selectCampsiteById(campsiteId));
+    console.log('campsite:', campsite);
 
     return (
         <Container>
