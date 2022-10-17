@@ -4,13 +4,17 @@ const validateUserLoginForm = (values) => {
     const errors = {};
 
     if (!username) {
-        errors.username = "The username field is required";
-    } else if (!password) {
-        errors.password = "The password field is required";
-    } else if (username.length <= 6 || username.length >= 15) {
-        errors.username = "The username must be between 6 and 15 characters";
+        errors.username = 'Required';
+    } else if (username.length < 6) {
+        errors.username = 'Must be at least 6 characters.';
+    } else if (username.length > 15) {
+        errors.username = 'Must be 15 characters or less';
+    }
+
+    if (!password) {
+        errors.password = 'Required';
     } else if (password.length < 8) {
-        errors.password = "The password must be at least 8 characters";
+        errors.password = 'Must be at least 8 characters.';
     }
 
     return errors;
