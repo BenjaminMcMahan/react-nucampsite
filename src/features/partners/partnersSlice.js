@@ -46,5 +46,9 @@ export const selectAllPartners = (state) => {
 };
 
 export const selectFeaturedPartner = (state) => {
-    return state.partners.partnersArray.find((partner) => partner.featured);
+    return {
+        featuredItem: state.partners.partnersArray.find((partner) => partner.featured),
+        isLoading: state.partners.isLoading,
+        errorMsg: state.partners.errMsg
+    }
 };
