@@ -3,7 +3,6 @@ import {useDispatch} from "react-redux";
 import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import CampsitesDirectoryPage from "./pages/CampsitesDirectoryPage";
-import './App.css';
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
@@ -12,6 +11,8 @@ import Footer from "./components/Footer";
 import CampsiteDetailPage from "./pages/CampsiteDetailPage";
 import {fetchCampsites} from "./features/campsites/campsitesSlice";
 import {fetchPartners} from "./features/partners/partnersSlice";
+import {fetchPromotions} from "./features/promotions/promotionsSlice";
+import './App.css';
 
 function App() {
     const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function App() {
     useEffect(() => {
         dispatch(fetchCampsites());
         dispatch(fetchPartners());
+        dispatch(fetchPromotions());
     }, [dispatch]);
 
     return (
