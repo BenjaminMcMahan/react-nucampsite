@@ -8,7 +8,7 @@ import Loading from "../../components/Loading";
 const PartnersList = () => {
     const partners = useSelector(selectAllPartners);
     const isLoading = useSelector((state) => state.partners.isLoading);
-    const errMsg = useSelector((state) => state.campsites.errMsg);
+    const errMsg = useSelector((state) => state.partners.errMsg);
 
     return isLoading ? (
         <Loading/>
